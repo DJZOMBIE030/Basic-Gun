@@ -5,10 +5,10 @@ This is done in a local script inside of StarterCharacterScripts.
 
 --Variables
 local player = game.Players.LocalPlayer
-local screenGui
 local character = script.Parent
 local mouse = player:GetMouse()
 local npc = game.ReplicatedStorage:WaitForChild("Dummy")
+local screenGui
 local maxAmmo = 60
 local shooting = false
 local reloading = false
