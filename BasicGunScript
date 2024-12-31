@@ -1,6 +1,6 @@
 --[[
 Game: https://www.roblox.com/games/124061680189008/Basic-Gun
-This is done in a local script inside of StartCharacterScripts.
+This is done in a local script inside of StarterCharacterScripts.
 ]]--
 
 --Variables
