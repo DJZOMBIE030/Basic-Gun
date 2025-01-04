@@ -216,7 +216,7 @@ local function CreateBullet(parent, barrel) --A function to create a bullet.
 			if touched:IsA("BasePart") and touched.Transparency ~= 1 and (touched.CanCollide == true or touched.Parent:FindFirstChildWhichIsA("Humanoid")) then --Checking if touched is a BasePart, visible, and collidable or parented to something with a humanoid. Limbs don't
 				if touched.Parent.Name ~= player.Name then --Making sure you can't shoot yourself.																	have collision when you're alive, but I want you to be able to shoot limbs so that's why I have that "or" check.
 					if touched.Parent:FindFirstChildWhichIsA("Humanoid") and touched.Parent:FindFirstChildWhichIsA("Humanoid").Health > 0 then --Checking for a humanoid and that it's alive. The last check doesn't guarantee a humanoid was found.
-						local humanoid = touched.Parent:FindFirstChildWhichIsA("Humanoid") --The found humanoid.
+						local tHumanoid = touched.Parent:FindFirstChildWhichIsA("Humanoid") --The found humanoid.
 						local multiplier = {		--\
 							Head = 1.15,			---\
 							Torso = 1,				----\
@@ -227,12 +227,12 @@ local function CreateBullet(parent, barrel) --A function to create a bullet.
 						}							--/
 						
 						if multiplier[touched.Name] then --Checking if getting touched's name from the multiplier dictionary isn't nil
-							humanoid:TakeDamage(10 * multiplier[touched.Name]) --Give the humanoid damage (10 times the found multiplier). touched.Name will match up with the name of the body part the bullet has hit and will give the associated multiplier.
+							tHumanoid:TakeDamage(10 * multiplier[touched.Name]) --Give the humanoid damage (10 times the found multiplier). touched.Name will match up with the name of the body part the bullet has hit and will give the associated multiplier.
 						end
 						
-						if humanoid.Health <= 0 then --If humaoid's health is <= 0, then:
-							if humanoid.Parent:FindFirstChild("HumanoidRootPart") then --If the touched's parent has a HRP, then:
-								humanoid.Parent:FindFirstChild("HumanoidRootPart"):Destroy() --Destory the parent's HRP. The HRP would get in the way of the ragdoll.
+						if tHumanoid.Health <= 0 then --If humaoid's health is <= 0, then:
+							if tHumanoid.Parent:FindFirstChild("HumanoidRootPart") then --If the touched's parent has a HRP, then:
+								tHumanoid.Parent:FindFirstChild("HumanoidRootPart"):Destroy() --Destory the parent's HRP. The HRP would get in the way of the ragdoll.
 							end
 							
 							debris:AddItem(touched.Parent, 10) --Use debris to Destroy the humanoid's parent in 10 seconds without yielding the script.
