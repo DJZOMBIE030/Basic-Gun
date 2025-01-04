@@ -171,7 +171,7 @@ local function CreateBullet(parent, barrel)
 			if touched:IsA("BasePart") and touched.Transparency ~= 1 and (touched.CanCollide == true or touched.Parent:FindFirstChildWhichIsA("Humanoid")) then
 				if touched.Parent.Name ~= player.Name then
 					if touched.Parent:FindFirstChildWhichIsA("Humanoid") and touched.Parent:FindFirstChildWhichIsA("Humanoid").Health > 0 then
-						local humanoid = touched.Parent:FindFirstChildWhichIsA("Humanoid") --The found humanoid.
+						local tHumanoid = touched.Parent:FindFirstChildWhichIsA("Humanoid") --The found humanoid.
 						local multiplier = {
 							Head = 1.15,
 							Torso = 1,
@@ -182,12 +182,12 @@ local function CreateBullet(parent, barrel)
 						}
 						
 						if multiplier[touched.Name] then
-							humanoid:TakeDamage(10 * multiplier[touched.Name])
+							tHumanoid:TakeDamage(10 * multiplier[touched.Name])
 						end
 						
-						if humanoid.Health <= 0 then
-							if humanoid.Parent:FindFirstChild("HumanoidRootPart") then
-								humanoid.Parent:FindFirstChild("HumanoidRootPart"):Destroy()
+						if tHumanoid.Health <= 0 then
+							if tHumanoid.Parent:FindFirstChild("HumanoidRootPart") then
+								tHumanoid.Parent:FindFirstChild("HumanoidRootPart"):Destroy()
 							end
 							
 							debris:AddItem(touched.Parent, 10)
