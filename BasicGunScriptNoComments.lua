@@ -171,7 +171,7 @@ local function CreateBullet(parent, barrel)
 			if touched:IsA("BasePart") and touched.Transparency ~= 1 and (touched.CanCollide == true or touched.Parent:FindFirstChildWhichIsA("Humanoid")) then
 				if touched.Parent.Name ~= player.Name then
 					if touched.Parent:FindFirstChildWhichIsA("Humanoid") and touched.Parent:FindFirstChildWhichIsA("Humanoid").Health > 0 then
-						local tHumanoid = touched.Parent:FindFirstChildWhichIsA("Humanoid") --The found humanoid.
+						local tHumanoid = touched.Parent:FindFirstChildWhichIsA("Humanoid")
 						local multiplier = {
 							Head = 1.15,
 							Torso = 1,
