@@ -13,5 +13,5 @@ I had no clue what Guard Clauses were before doing research. I found a great vid
 Cool Video: https://www.youtube.com/watch?v=CFRhGnuXG-4
 
 I realized I've seen them in other people's code after I learned about them and I always wondered "Why?" (again...; never bothering to find an answer lol).
-It's just for readability (and can prevent errors from occurring). To be honest, huge indentation never bothered me that much. This did make my code more pleasant on the eyes though.
+It's just for readability (and can prevent errors from occurring). To be honest, huge indentation/deep nesting never bothered me that much. This did make my code more pleasant on the eyes though.
 I HOPE I have finally fixed everything. Though, it's been pretty fun learning this stuff (pretty fun learning how bad my code is lol; I even wondered why I used :FindFirstChild() the way I did in some spots...).
